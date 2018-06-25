@@ -4,11 +4,10 @@ import android.content.Context;
 import android.os.Looper;
 import android.widget.Toast;
 
-import net.oschina.app.improve.main.ErrorActivity;
-
 /**
  * Created by JuQiu
  * on 2016/9/13.
+ * 捕捉异常
  */
 
 public class AppCrashHandler implements Thread.UncaughtExceptionHandler {

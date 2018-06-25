@@ -35,6 +35,7 @@ import butterknife.OnLongClick;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 管理MainActivity里底部导航栏的点击事件
  */
 public class NavFragment extends BaseFragment implements View.OnClickListener, NoticeManager.NoticeNotify, View.OnLongClickListener {
     @Bind(R.id.nav_item_news)
@@ -64,9 +65,8 @@ public class NavFragment extends BaseFragment implements View.OnClickListener, N
 
     @SuppressWarnings("deprecation")
     @Override
-    protected void initWidget(View root) {
+    protected void initWidget(View root) {  //初始化  绑定NavigationButton和Fragment一起
         super.initWidget(root);
-
         ShapeDrawable lineDrawable = new ShapeDrawable(new BorderShape(new RectF(0, 1, 0, 0)));
         lineDrawable.getPaint().setColor(getResources().getColor(R.color.list_divider_color));
         LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{
@@ -90,7 +90,6 @@ public class NavFragment extends BaseFragment implements View.OnClickListener, N
         mNavMe.init(R.drawable.tab_icon_me,
                 R.string.main_tab_name_my,
                 UserInfoFragment.class);
-
 
     }
 
@@ -127,7 +126,7 @@ public class NavFragment extends BaseFragment implements View.OnClickListener, N
         doSelect(mNavNews);
     }
 
-    public void select(int index) {
+    public void select(int index) {     //选择(我的)界面
         if (mNavMe != null)
             doSelect(mNavMe);
     }
@@ -172,7 +171,7 @@ public class NavFragment extends BaseFragment implements View.OnClickListener, N
         mCurrentNavButton = newNavButton;
     }
 
-    private void doTabChanged(NavigationButton oldNavButton, NavigationButton newNavButton) {
+    private void doTabChanged(NavigationButton oldNavButton, NavigationButton newNavButton) {   //
         FragmentTransaction ft = mFragmentManager.beginTransaction();
         if (oldNavButton != null) {
             if (oldNavButton.getFragment() != null) {

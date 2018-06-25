@@ -73,7 +73,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 import static net.oschina.app.improve.search.activities.NearbyActivity.LOCATION_PERMISSION;
 
 /**
- * OnNavigationReselectListener
+ *
  */
 public class MainActivity extends BaseActivity implements NavFragment.OnNavigationReselectListener,
         EasyPermissions.PermissionCallbacks, CheckUpdateManager.RequestPermissions {
@@ -204,7 +204,8 @@ public class MainActivity extends BaseActivity implements NavFragment.OnNavigati
     @Override
     public void onReselect(NavigationButton navigationButton) { //点击了同一个NavigationButton调用
         Fragment fragment = navigationButton.getFragment();
-        if (fragment != null && fragment instanceof OnTabReselectListener) {
+        if (fragment != null
+                && fragment instanceof OnTabReselectListener) {
             OnTabReselectListener listener = (OnTabReselectListener) fragment;
             listener.onTabReselect();
         }
