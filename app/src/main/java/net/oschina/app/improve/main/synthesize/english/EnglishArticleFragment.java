@@ -47,7 +47,7 @@ public class EnglishArticleFragment extends BaseRecyclerFragment<EnglishArticleC
         if (mPresenter != null) {
             mPresenter.loadCache();
         }
-        super.initData();
+        super.initData();   //加载数据
         mRefreshLayout.setBottomCount(2);
     }
 

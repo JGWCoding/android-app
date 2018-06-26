@@ -202,7 +202,7 @@ public class MainActivity extends BaseActivity implements NavFragment.OnNavigati
     }
 
     @Override
-    public void onReselect(NavigationButton navigationButton) { //点击了同一个NavigationButton调用
+    public void onReselect(NavigationButton navigationButton) { //点击了同一个NavigationButton调用  --- 基本没用(不靠这个一开始加载数据)
         Fragment fragment = navigationButton.getFragment();
         if (fragment != null
                 && fragment instanceof OnTabReselectListener) {
